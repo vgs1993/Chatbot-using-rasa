@@ -1,0 +1,27 @@
+<head>
+    <link rel="stylesheet" href="/static/Chatroom.css"/>
+</head>
+<body>
+<div class="chat-container"></div>
+
+<script src="/static/Chatroom.js"/>
+</script>
+<script type="text/javascript">
+    var chatroom = new window.Chatroom({
+        host: "{{ rasa_url }}",
+        title: "Chat with resume bot",
+        container: document.querySelector(".chat-container"),
+        welcomeMessage: "Hi there! I'm your resume assistant - ResumeAssist. Provide me the details of any of the sections below:\n \
+        Personal details - Name, Address, Phone, Email\n \
+        Objective of the resume\n \
+        Skills and Abilities\n \
+        Work history - Company, Duration, Job Title\n \
+        Education - Degree, Duration, School\n \
+        Communication Languages\n \
+        Leadership skills highlights\n",
+        speechRecognition: "en-US"
+        // voiceLang: "en-US"
+    });
+    chatroom.openChat();
+</script>
+</body>

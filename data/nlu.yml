@@ -1,0 +1,1716 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hi
+      - hello
+      - hey
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - sure
+      - ok
+      - why not
+      - ok great
+      - yes I did
+      - yeah, great
+      - pretty good
+      - fine
+      - You bet
+      - I sure did
+      - more or less
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - none
+      - absolutely not
+      - no thanks
+      - didn't do any
+      - no I didn't
+      - could have been better
+      - not great
+      - nope
+
+  - intent: personal
+    examples: |
+      - I'm [Sandeep](first_name) [Maurya](last_name)
+      - I am [Avinay](first_name) [Lall](last_name)
+      - Myself [Ram](first_name) [Singh](last_name)
+      - [Sandeep](first_name) [Maurya](last_name)
+      - [Harika](first_name) [Kumari](last_name)
+      - My name is [Sandeep](first_name) [Maurya](last_name)
+      - I am [sudarshan s](first_name) [deshmukh](last_name)
+      - My last name is [kumar](last_name)
+      - my name is [vijay kumar](first_name)  [sharma](last_name)
+      - my name is [abhishek](first_name) [agarwal](last_name)
+      - my name is [swarna](first_name) [choudhary](last_name)
+      - my name is [kapil](first_name) [verma](last_name)
+      - my name is [ram kumar](first_name) [verma](last_name)
+      - my name is [riya](first_name) [devi](last_name)
+      - my name is [namrata](first_name) [mohanty](last_name)
+      - my name is [chetana](first_name) [gavankar](last_name)
+      - my name is [suraj](first_name) [kumar](last_name)
+      - my name is [simran](first_name) [kaur](last_name)
+      - my name is [pooja](first_name) [singh](last_name)
+      - my name is [deepa](first_name) [mishra](last_name)
+      - i'm [robin](first_name) [matthew](last_name)
+      - i'm [ravinda](first_name) [kumar](last_name)
+      - i'm [ramshankar](first_name) [das](last_name)
+      - i'm [kiran](first_name) [kaur](last_name)
+      - i'm [rahul](first_name) [patil](last_name)
+      - i'm [sandhya](first_name) [kumari](last_name)
+      - i'm [pratish](first_name) [iyer](last_name)
+      - myself [sanjay](first_name) [yadav](last_name)
+      - myself [pradeep](first_name) [pandey](last_name)
+      - myself [surya prakash](first_name) [rai](last_name)
+      - myself [shakuntla](first_name) [devi](last_name)
+      - myself [asif](first_name) [khan](last_name)
+      - myself [namita](first_name) [sharma](last_name)
+      - myself [bhupendra](first_name) [dasgupta](last_name)
+      - myself [mahesh](first_name) [prajapati](last_name)
+      - myself [hemant](first_name) [patel](last_name)
+      - I am [rajendar](first_name) [prasad](last_name)
+      - I am [amardeep](first_name) [gupta](last_name)
+      - I am [abhijit](first_name) [sarkar](last_name)
+      - I am [kanchan](first_name) [shrivastav](last_name)
+      - I am [tejashree](first_name) [kochar](last_name)
+      - I am [jagdish](first_name) [rathod](last_name)
+      - I am [manish](first_name) [gautam](last_name)
+      - I am [pankaj](first_name) [chauhan](last_name)
+      - I am [prasoon](first_name) [joshi](last_name)
+      - I am [radhika](first_name) [thakur](last_name)
+      - I am [vaibhav](first_name) [nair](last_name)
+      - I'm [Sandeep Maurya](PERSON)
+      - I am [Avinay Lall](PERSON)
+      - Myself [Ram Singh](PERSON)
+      - [Sandeep Maurya](PERSON)
+      - [Harika Kumari](PERSON)
+      - My name is [Sandeep Maurya](PERSON)
+      - I am [Sudarshan S](PERSON)
+      - I stay at [Block H FNo. 804 Aparna Cyberzon, Nallagandla, Serilingampally](street), [Hyderabad](city)
+      - I stay at [Block H FNo. 804 Aparna Cyberzon, Nallagandla, Serilingampally](street), [Hyderabad](city), [Telangana](state)
+      - I stay at [Block H FNo. 804 Aparna Cyberzon, Nallagandla, Serilingampally](street), [Hyderabad](city), [Telangana](state) - [500019](pin_code)
+      - I stay in [Hyderabad](city)
+      - I live in [Pune](city)
+      - I'm from [New Delhi](city)
+      - I'm from [Prayagraj](city)
+      - I stay in [Mumbai](city)
+      - I live in [Surat](city)
+      - I'm from [Secunderabad](city)
+      - I'm from [Hyderabad](city) - [500019](pin_code)
+      - I stay in [Hyderabad](city) - [500045](pin_code)
+      - I live in [Hyderabad](city) - [500047](pin_code)
+      - I stay in [Pune](city) - [411027](pin_code)
+      - I stay in [Pune](city) - [411015](pin_code)
+      - I live in [Pune](city) - [411038](pin_code)
+      - I live in [Telangana](state) - [500019](pin_code)
+      - I live in [Telangana](state) - [500045](pin_code)
+      - I'm from [Telangana](state) - [500047](pin_code)
+      - I stay in [Maharashtra](state) - [411027](pin_code)
+      - I'm from [Maharashtra](state) - [411015](pin_code)
+      - I stay in [Maharashtra](state) - [411038](pin_code)
+      - I'm from [Chennai](city) is in [Tamilnadu](state) state
+      - My pin code is [500019](pin_code)
+      - zipcode [504273](pin_code)
+      - zipcode [504293](pin_code)
+      - zipcode [504307](pin_code)
+      - zipcode [504001](pin_code)
+      - zipcode [504251](pin_code)
+      - pincode [504309](pin_code)
+      - pincode [504201](pin_code)
+      - pincode [504110](pin_code)
+      - pincode [504202](pin_code)
+      - pincode [504296](pin_code)
+      - pincode [504231](pin_code)
+      - pincode [504109](pin_code)
+      - pincode [504299](pin_code)
+      - pincode [504002](pin_code)
+      - my pin code is [504204](pin_code)
+      - my pin code is [504312](pin_code)
+      - my pin code is [504313](pin_code)
+      - my pin code is [504101](pin_code)
+      - my pin code is [504205](pin_code)
+      - my pin is [504203](pin_code)
+      - my pin is [504295](pin_code)
+      - my pin is [504106](pin_code)
+      - my pin is [504306](pin_code)
+      - my pin is [504304](pin_code)
+      - my pin is [504103](pin_code)
+      - my pin is [504308](pin_code)
+      - my pin is [504311](pin_code)
+      - my zip is [504272](pin_code)
+      - my zip is [504323](pin_code)
+      - my zip is [504215](pin_code)
+      - my zip is [504346](pin_code)
+      - my zip is [504310](pin_code)
+      - my zip is [504294](pin_code)
+      - my zip is [504302](pin_code)
+      - my zip is [504206](pin_code)
+      - my zip is [504102](pin_code)
+      - My pincode is [504218](pin_code)
+      - My pincode is [504207](pin_code)
+      - My pincode is [504209](pin_code)
+      - My pincode is [504104](pin_code)
+      - I live in [Adilabad](city)
+      - I live in [Warangal](city)
+      - I live in [Karim Nagar](city)
+      - I live in [Mahabub Nagar](city)
+      - I live in [K.V.Rangareddy](city)
+      - I live in [Medak](city)
+      - I live in [Nalgonda](city)
+      - I stay in [Nizamabad](city)
+      - I stay in [Hyderabad](city)
+      - I stay in [Ananthapur](city)
+      - I stay in [Cuddapah](city)
+      - I stay in [Chittoor](city)
+      - I stay in [Kurnool](city)
+      - I stay in [Prakasam](city)
+      - I stay in [West Godavari](city)
+      - I stay in [Krishna](city)
+      - I stay in [Nellore](city)
+      - I stay in [Guntur](city)
+      - I stay in [Khammam](city)
+      - I stay in [East Godavari](city)
+      - I'm from [Visakhapatnam](city)
+      - I'm from [Pondicherry](city)
+      - I'm from [Vizianagaram](city)
+      - I'm from [Srikakulam](city)
+      - I'm from [Lakhimpur](city)
+      - I'm from [Dibrugarh](city)
+      - I'm from [Dhemaji](city)
+      - I'm from [Marigaon](city)
+      - I'm from [Nagaon](city)
+      - I'm from [Karbi Anglong](city)
+      - I'm from [Golaghat](city)
+      - I'm from [Sibsagar](city)
+      - residing at [Jorhat](city)
+      - residing at [Tinsukia](city)
+      - residing at [Karimganj](city)
+      - residing at [Hailakandi](city)
+      - residing at [Cachar](city)
+      - residing at [North Cachar Hills](city)
+      - residing at [Darrang](city)
+      - residing at [Sonitpur](city)
+      - my state is [TELANGANA](state)
+      - my state is [NULL](state)
+      - my state is [ANDHRA PRADESH](state)
+      - my state is [PONDICHERRY](state)
+      - my state is [ASSAM](state)
+      - my state is [BIHAR](state)
+      - my state is [CHATTISGARH](state)
+      - my state is [DELHI](state)
+      - my state is [GUJARAT](state)
+      - my state is [DAMAN & DIU](state)
+      - my state is [DADRA & NAGAR HAVELI](state)
+      - my state is [HARYANA](state)
+      - my state is [HIMACHAL PRADESH](state)
+      - my state is [JAMMU & KASHMIR](state)
+      - my state is [JHARKHAND](state)
+      - my state is [KARNATAKA](state)
+      - i hail from [KERALA](state)
+      - i hail from [LAKSHADWEEP](state)
+      - i hail from [MADHYA PRADESH](state)
+      - i hail from [MAHARASHTRA](state)
+      - i hail from [GOA](state)
+      - i hail from [MANIPUR](state)
+      - state [MIZORAM](state)
+      - state [NAGALAND](state)
+      - state [TRIPURA](state)
+      - state [ARUNACHAL PRADESH](state)
+      - state [MEGHALAYA](state)
+      - state [ODISHA](state)
+      - state [CHANDIGARH](state)
+      - state [PUNJAB](state)
+      - state [RAJASTHAN](state)
+      - state [TAMIL NADU](state)
+      - state [UTTAR PRADESH](state)
+      - state [UTTARAKHAND](state)
+      - state [WEST BENGAL](state)
+      - state [ANDAMAN & NICOBAR ISLANDS](state)
+      - state [SIKKIM](state)
+      - my state is [AP](state)
+      - my state is [HP](state)
+      - my state is [JK](state)
+      - my state is [MP](state)
+      - my state is [TN](state)
+      - my state is [UP](state)
+      - my state is [WB](state)
+      - My phone number is [8796440775](phone_number)
+      - My mobile number is [+91-8796440775](phone_number)
+      - my cell number is [+91 8796440775](phone_number)
+      - My mobile number is [+91-8796440775](phone_number)
+      - my phone no. is [+917926853075](phone_number)
+      - my phone no. is [+912255901166](phone_number)
+      - my phone no. is [+911123738456](phone_number)
+      - my phone no. is [+914055206583](phone_number)
+      - my phone no. is [+912228659504](phone_number)
+      - my phone number is [+91 2222882088](phone_number)
+      - my phone number is [+91 2223475969](phone_number)
+      - my phone number is [+91 1152345099](phone_number)
+      - my phone number is [040-26692464](phone_number)
+      - my phone number is [+91-2266955518](phone_number)
+      - my phone number is [912222043021](phone_number)
+      - my phone number is [+91-2226734363](phone_number)
+      - my cell number is [040-41328473](phone_number)
+      - my cell number is [020-222490410](phone_number)
+      - my cell number is [022-402337000](phone_number)
+      - my cell number is [+91-2266923581](phone_number)
+      - my cell number is [044-25119496](phone_number)
+      - my cell number is [+91-1127058101](phone_number)
+      - my cell number is [+91-1125082928](phone_number)
+      - my contact number is [+91-1123716044](phone_number)
+      - my contact number is [+91-2226344404](phone_number)
+      - my contact number is [011-25442334](phone_number)
+      - my contact number is [+91-2222696766](phone_number)
+      - my contact number is [021-222413516](phone_number)
+      - my contact number is [021-22286124](phone_number)
+      - my contact number is [+91-4024616766](phone_number)
+      - my contact no. is [+91-4426174157](phone_number)
+      - my contact no. is [+91-4426423351](phone_number)
+      - my contact no. is [020-41831402](phone_number)
+      - my contact no. is [2228815384](phone_number)
+      - my contact no. is [1127850975](phone_number)
+      - My mobile number is [8022221757](phone_number)
+      - My mobile number is [2026346175](phone_number)
+      - My mobile number is [2225555218](phone_number)
+      - My mobile number is [040-22217681](phone_number)
+      - My mobile number is [2226246757](phone_number)
+      - My mobile number is [020-26468657](phone_number)
+      - My mobile number is [044-27375062](phone_number)
+      - My mobile number is [011-23126899](phone_number)
+      - My mobile number is [2226788896](phone_number)      
+      - my email is [maurya.ait@gmail.com](email)
+      - my email is [phillip.allen@yahoo.com](email)
+      - my email is [tim.belden@yahoo.com](email)
+      - my email is [phillip.allen@yahoo.com](email)
+      - my email is [john.lavorato@yahoo.com](email)
+      - my email is [phillip.allen@gmail.com](email)
+      - my email is [joyce.teixeira@gmail.com](email)
+      - my email is [phillip.allen@gmail.com](email)
+      - my email is [mark.scott@gmail.com](email)
+      - my email is [phillip.allen@gmail.com](email)
+      - my email is [zimam@gmail.com](email)
+      - my email is [zimam@gmail.com](email)
+      - my email is [phillip.allen@gmail.com](email)
+      - my email is [buck.buckner@honeywell.com](email)
+      - my email is [phillip.allen@hotmail.com](email)
+      - my email is [jsmith@austintx.com](email)
+      - my email is [phillip.allen@hotmail.com](email)
+      - my email is [john.lavorato@hotmail.com](email)
+      - my email is [phillip.allen@hotmail.com](email)
+      - my email is [frank.hayden@hotmail.com](email)
+      - my email is [phillip.allen@hotmail.com](email)
+      - my email is [pallen70@hotmail.com](email)
+      - my email is [pallen70@hotmail.com](email)
+      - my email is [phillip.allen@yahoo.com](email)
+      - my email is [cbpres@austin.rr](email)
+      - my email is [cbpres@austin.rr](email)
+      - my email is [phillip.allen@yahoo.com](email)
+      - my email is [jsmith@austintx.com](email)
+      - my email is [jsmith@austintx.com](email)
+      - my email is [phillip.allen@yahoo.com](email)
+      - my email is [jsmith@austintx.com](email)
+      - my email is [phillip.allen@gmail.com](email)
+      - my email is [stagecoachmama@hotmail.com](email)
+      - my email is [stagecoachmama@hotmail.com](email)
+      - my email is [phillip.allen@gmail.com](email)
+      - my email is [bs_stone@yahoo.com](email)
+      - my email is [someone@yahoo.com](email)
+      - email id [newmail@outlook.ac.in](email)
+      - My email is [ram at the rate gmail dot com](email)
+      - [Surya at the rate gmail](email)
+      - my email is [sandeep.m@gamil](email)
+      - email id is [avinay_lall@gmail](email)
+      - email id [india1234@yahoo](email)
+
+  - intent: objective
+    examples: |
+      - IT professional with over 10 years of experience specializing in logistics domain
+      - Detail oriented accountant with 14 years of experience in effectively maintaining accurate accounting information
+      - Experienced restaurant server with 3 years of experience working in busy eating establishments
+      - Grounded and solution oriented computer scientist with a wide variety of professional experiences
+
+  - intent: skills
+    examples: |
+      - skill : [Mainframe](skill) , [java](skill)
+      - tech [Java](skill) 
+      - I work on [Java](skill) and [python](skill)
+      - I am currently working on [python](skill) language
+
+
+  - intent: communication
+    examples: |
+      - I speak [English](language)
+      - I can read and write [English](language) , [Hindi](language)
+      - I can communicate in 3 languages [English](language), [Marathi](lanuage) and [Kannada](language)
+      - [Tamil](language)
+      - [Telgu](language)
+      - [Malyalam](language)
+      - [Urdu](language)
+
+  - intent: experience
+    examples: |
+      - I'm currently working with [Thoughtworks](company) as [LeadConsultant](job_title)
+      - I joined [Thoughtworks](company) in [202]{"entity": "year", "role": "from"}
+      - I worked at [Persistent](company) from [2004]{"entity": "year", "role": "from"} till [2012]{"entity": "year", "role": "to"}
+      - I worked at [Icertis](company) from [2012]{"entity": "year", "role": "from"} till [2016]{"entity": "year", "role": "to"}
+      - I worked at [Microsoft](company) from [2016]{"entity": "year", "role": "from"} till [2022]{"entity": "year", "role": "to"}
+      - from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - starting in [2016]{"entity": "year", "role": "from"} and ending in [2022]{"entity": "year", "role": "to"}
+      - joined in [2016]{"entity": "year", "role": "from"} and left in [2022]{"entity": "year", "role": "to"}
+      - I was a [Tech Lead](job_title) at [Persistent](company)
+      - I started at [Icertis](company) in [2012]{"entity": "year", "role": "from"}
+      - I worked at [Icertis](company) till [2016]{"entity": "year", "role": "to"}
+      - My job title at [Icertis](company) was [TechnicalArchitect](job_title)
+      - I joined [Microsoft](company) in [2016]{"entity": "year", "role": "from"}
+      - My last date in [Microsoft](company) was [2020]{"entity": "year", "role": "to"}
+      - I worked as an [Architect](job_title) at [Microsoft](company)
+      - I worked at [TCS](company) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - I worked at [Infosys](company) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - I worked at [Wipro](company) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - I worked at [HCL](company) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - I worked at [Tech Mahindra](company) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - I worked at [Oracle](company) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - my current company is [LnT](company)
+      - my current company is [Mphasis](company)
+      - my joined [Mindtree](company) in [2016]{"entity": "year", "role": "from"}
+      - my current company is [Cognizant](company)
+      - i joined [Persistent Systems](company) in [2016]{"entity": "year", "role": "from"}
+      - I was an [Engineer](job_title) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - I was a [Software Engineer](job_title) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - I was a [Senior Engineer](job_title) from [2016]{"entity": "year", "role": "from"} to [2022]{"entity": "year", "role": "to"}
+      - [Lead Engineer](job_title)
+      - [Consultant](job_title)
+      - [Senior Consultant](job_title)
+      - [Lead Consultant](job_title)
+      - [Associate Architect](job_title)
+      - [Technical Architect](job_title)
+      - [Solution Architect](job_title)
+      - [Enterprise Architect](job_title)
+      - [2022](year)
+      - [2021](year)
+      - [2020](year)
+      - [2019](year)
+      - [2018](year)
+  - intent: done
+    examples: |
+      - Done
+      - I'm done
+      - That's it
+      - That is all
+      - I'm done providing information
+      - Nothing more
+      - Finished with this section
+
+  - intent: education
+    examples: |
+      - I completed my [BE](degree) from [Savitribai Phule Pune University](school) in [Pune](city)
+      - I did my [BE](degree) Computers from [2000]{"entity": "year", "role": "from"} to [2004]{"entity": "year", "role": "to"}
+      - I did my [MS](degree) in Software Systems from [BITS Pilani](school) in [Pilani](city) from [2012]{"entity": "year", "role": "from"} to [2014]{"entity": "year", "role": "to"}
+      - [Indian Institute of Technology Bombay](school)
+      - [University of Delhi](school)
+      - [Vellore Institute of Technology](school)
+      - [SRM Institute of Science and Technology](school)
+      - [Manipal Academy of Higher Education](school)
+      - [SRM Institute of Science and Technology](school)
+      - [Indian Institute of Science](school)
+      - [BTech](degree)
+      - [ME](degree)
+      - [MTech](degree)
+      - [BSc](degree)
+      - [BDS](degree)
+      - [BCA](degree)
+      - [MCA](degree)
+
+  - intent: leadership
+    examples: |
+      - I was the captain of Taekwondo team in my college
+      - The president of Astronomy club in my college
+      - Captain of football team in my college
+      - Captain of cricket team in my college
+      - Secretary of chess club in the college
+      - Led the team of 10 engineers at Persistent
+      - Was leading a team of 40 members at Microsoft
+      - Managing a team of 40 people in Microsoft
+      - Secretary of my society
+      - President of my society
+      - Led the 100 kms triathlon team of 3 members
+
+  - regex: pin_code
+    examples: |
+      - \d{6}
+  - synonym: Bachelor of engineering
+    examples: |
+      - BE
+      - B.E.
+      - BTECH
+      - B. Tech
+  - synonym: Masters of engineering
+    examples: |
+      - ME
+      - M.E.
+      - MTECH
+      - M. Tech
+  - lookup: state 
+    examples: |
+      - Andhra Pradesh
+      - Arunachal Pradesh
+      - Assam
+      - Bihar
+      - Chhattisgarh
+      - Goa
+      - Gujarat
+      - Haryana
+      - Himachal Pradesh
+      - Jammu and Kashmir
+      - Jharkhand
+      - Karnataka
+      - Kerala
+      - Madhya Pradesh
+      - Maharashtra
+      - Manipur
+      - Meghalaya
+      - Mizoram
+      - Nagaland
+      - Odisha
+      - Punjab
+      - Rajasthan
+      - Sikkim
+      - Tamil Nadu
+      - Telangana
+      - Tripura
+      - Uttar Pradesh
+      - Uttarakhand
+      - West Bengal
+  - lookup: city
+    examples: |
+      - Mumbai
+      - Delhi
+      - Bengaluru
+      - Ahmedabad
+      - Hyderabad
+      - Chennai
+      - Kolkata
+      - Pune
+      - Jaipur
+      - Surat
+      - Lucknow
+      - Kanpur
+      - Nagpur
+      - Patna
+      - Indore
+      - Thane
+      - Bhopal
+      - Visakhapatnam
+      - Vadodara
+      - Firozabad
+      - Ludhiana
+      - Rajkot
+      - Agra
+      - Siliguri
+      - Nashik
+      - Faridabad
+      - Patiala
+      - Meerut
+      - Kalyan-Dombivali
+      - Vasai-Virar
+      - Varanasi
+      - Srinagar
+      - Dhanbad
+      - Jodhpur
+      - Amritsar
+      - Raipur
+      - Allahabad
+      - Coimbatore
+      - Jabalpur
+      - Gwalior
+      - Vijayawada
+      - Madurai
+      - Guwahati
+      - Chandigarh
+      - Hubli-Dharwad
+      - Amroha
+      - Moradabad
+      - Gurgaon
+      - Aligarh
+      - Solapur
+      - Ranchi
+      - Jalandhar
+      - Tiruchirappalli
+      - Bhubaneswar
+      - Salem
+      - Warangal
+      - Mira-Bhayandar
+      - Thiruvananthapuram
+      - Bhiwandi
+      - Saharanpur
+      - Guntur
+      - Amravati
+      - Bikaner
+      - Noida
+      - Jamshedpur
+      - Bhilai Nagar
+      - Cuttack
+      - Kochi
+      - Udaipur
+      - Bhavnagar
+      - Dehradun
+      - Asansol
+      - Nanded-Waghala
+      - Ajmer
+      - Jamnagar
+      - Ujjain
+      - Sangli
+      - Loni
+      - Jhansi
+      - Pondicherry
+      - Nellore
+      - Jammu
+      - Belagavi
+      - Raurkela
+      - Mangaluru
+      - Tirunelveli
+      - Malegaon
+      - Gaya
+      - Tiruppur
+      - Davanagere
+      - Kozhikode
+      - Akola
+      - Kurnool
+      - Bokaro Steel City
+      - Rajahmundry
+      - Ballari
+      - Agartala
+      - Bhagalpur
+      - Latur
+      - Dhule
+      - Korba
+      - Bhilwara
+      - Brahmapur
+      - Mysore
+      - Muzaffarpur
+      - Ahmednagar
+      - Kollam
+      - Raghunathganj
+      - Bilaspur
+      - Shahjahanpur
+      - Thrissur
+      - Alwar
+      - Kakinada
+      - Nizamabad
+      - Sagar
+      - Tumkur
+      - Hisar
+      - Rohtak
+      - Panipat
+      - Darbhanga
+      - Kharagpur
+      - Aizawl
+      - Ichalkaranji
+      - Tirupati
+      - Karnal
+      - Bathinda
+      - Rampur
+      - Shivamogga
+      - Ratlam
+      - Modinagar
+      - Durg
+      - Shillong
+      - Imphal
+      - Hapur
+      - Ranipet
+      - Anantapur
+      - Arrah
+      - Karimnagar
+      - Parbhani
+      - Etawah
+      - Bharatpur
+      - Begusarai
+      - New Delhi
+      - Chhapra
+      - Kadapa
+      - Ramagundam
+      - Pali
+      - Satna
+      - Vizianagaram
+      - Katihar
+      - Hardwar
+      - Sonipat
+      - Nagercoil
+      - Thanjavur
+      - Murwara (Katni)
+      - Naihati
+      - Sambhal
+      - Nadiad
+      - Yamunanagar
+      - English Bazar
+      - Eluru
+      - Munger
+      - Panchkula
+      - Raayachuru
+      - Panvel
+      - Deoghar
+      - Ongole
+      - Nandyal
+      - Morena
+      - Bhiwani
+      - Porbandar
+      - Palakkad
+      - Anand
+      - Purnia
+      - Baharampur
+      - Barmer
+      - Morvi
+      - Orai
+      - Bahraich
+      - Sikar
+      - Vellore
+      - Singrauli
+      - Khammam
+      - Mahesana
+      - Silchar
+      - Sambalpur
+      - Rewa
+      - Unnao
+      - Hugli-Chinsurah
+      - Raiganj
+      - Phusro
+      - Adityapur
+      - Alappuzha
+      - Bahadurgarh
+      - Machilipatnam
+      - Rae Bareli
+      - Jalpaiguri
+      - Bharuch
+      - Pathankot
+      - Hoshiarpur
+      - Baramula
+      - Adoni
+      - Jind
+      - Tonk
+      - Tenali
+      - Kancheepuram
+      - Vapi
+      - Sirsa
+      - Navsari
+      - Mahbubnagar
+      - Puri
+      - Robertson Pet
+      - Erode
+      - Batala
+      - Haldwani-cum-Kathgodam
+      - Vidisha
+      - Saharsa
+      - Thanesar
+      - Chittoor
+      - Veraval
+      - Lakhimpur
+      - Sitapur
+      - Hindupur
+      - Santipur
+      - Balurghat
+      - Ganjbasoda
+      - Moga
+      - Proddatur
+      - Srinagar
+      - Medinipur
+      - Habra
+      - Sasaram
+      - Hajipur
+      - Bhuj
+      - Shivpuri
+      - Ranaghat
+      - Shimla
+      - Tiruvannamalai
+      - Kaithal
+      - Rajnandgaon
+      - Godhra
+      - Hazaribag
+      - Bhimavaram
+      - Mandsaur
+      - Dibrugarh
+      - Kolar
+      - Bankura
+      - Mandya
+      - Dehri-on-Sone
+      - Madanapalle
+      - Malerkotla
+      - Lalitpur
+      - Bettiah
+      - Pollachi
+      - Khanna
+      - Neemuch
+      - Palwal
+      - Palanpur
+      - Guntakal
+      - Nabadwip
+      - Udupi
+      - Jagdalpur
+      - Motihari
+      - Pilibhit
+      - Dimapur
+      - Mohali
+      - Sadulpur
+      - Rajapalayam
+      - Dharmavaram
+      - Kashipur
+      - Sivakasi
+      - Darjiling
+      - Chikkamagaluru
+      - Gudivada
+      - Baleshwar Town
+      - Mancherial
+      - Srikakulam
+      - Adilabad
+      - Yavatmal
+      - Barnala
+      - Nagaon
+      - Narasaraopet
+      - Raigarh
+      - Roorkee
+      - Valsad
+      - Ambikapur
+      - Giridih
+      - Chandausi
+      - Purulia
+      - Patan
+      - Bagaha
+      - Hardoi 
+      - Achalpur
+      - Osmanabad
+      - Deesa
+      - Nandurbar
+      - Azamgarh
+      - Ramgarh
+      - Firozpur
+      - Baripada Town
+      - Karwar
+      - Siwan
+      - Rajampet
+      - Pudukkottai
+      - Anantnag
+      - Tadpatri
+      - Satara
+      - Bhadrak
+      - Kishanganj
+      - Suryapet
+      - Wardha
+      - Ranebennuru
+      - Amreli
+      - Neyveli (TS)
+      - Jamalpur
+      - Marmagao
+      - Udgir
+      - Tadepalligudem
+      - Nagapattinam
+      - Buxar
+      - Aurangabad
+      - Jehanabad
+      - Phagwara
+      - Khair
+      - Sawai Madhopur
+      - Kapurthala
+      - Chilakaluripet
+      - Aurangabad
+      - Malappuram
+      - Rewari
+      - Nagaur
+      - Sultanpur
+      - Nagda
+      - Port Blair
+      - Lakhisarai
+      - Panaji
+      - Tinsukia
+      - Itarsi
+      - Kohima
+      - Balangir
+      - Nawada
+      - Jharsuguda
+      - Jagtial
+      - Viluppuram
+      - Amalner
+      - Zirakpur
+      - Tanda
+      - Tiruchengode
+      - Nagina
+      - Yemmiganur
+      - Vaniyambadi
+      - Sarni
+      - Theni Allinagaram
+      - Margao
+      - Akot
+      - Sehore
+      - Mhow Cantonment
+      - Kot Kapura
+      - Makrana
+      - Pandharpur
+      - Miryalaguda
+      - Shamli
+      - Seoni
+      - Ranibennur
+      - Kadiri
+      - Shrirampur
+      - Rudrapur
+      - Parli
+      - Najibabad
+      - Nirmal
+      - Udhagamandalam
+      - Shikohabad
+      - Jhumri Tilaiya
+      - Aruppukkottai
+      - Ponnani
+      - Jamui
+      - Sitamarhi
+      - Chirala
+      - Anjar
+      - Karaikal
+      - Hansi
+      - Anakapalle
+      - Mahasamund
+      - Faridkot
+      - Saunda
+      - Dhoraji
+      - Paramakudi
+      - Balaghat
+      - Sujangarh
+      - Khambhat
+      - Muktsar
+      - Rajpura
+      - Kavali
+      - Dhamtari
+      - Ashok Nagar
+      - Sardarshahar
+      - Mahuva
+      - Bargarh
+      - Kamareddy
+      - Sahibganj
+      - Kothagudem
+      - Ramanagaram
+      - Gokak
+      - Tikamgarh
+      - Araria
+      - Rishikesh
+      - Shahdol
+      - Medininagar (Daltonganj)
+      - Arakkonam
+      - Washim
+      - Sangrur
+      - Bodhan
+      - Fazilka
+      - Palacole
+      - Keshod
+      - Sullurpeta
+      - Wadhwan
+      - Gurdaspur
+      - Vatakara
+      - Tura
+      - Narnaul
+      - Kharar
+      - Yadgir
+      - Ambejogai
+      - Ankleshwar
+      - Savarkundla
+      - Paradip
+      - Virudhachalam
+      - Kanhangad
+      - Kadi
+      - Srivilliputhur
+      - Gobindgarh
+      - Tindivanam
+      - Mansa
+      - Taliparamba
+      - Manmad
+      - Tanuku
+      - Rayachoti
+      - Virudhunagar
+      - Koyilandy
+      - Jorhat
+      - Karur
+      - Valparai
+      - Srikalahasti
+      - Neyyattinkara
+      - Bapatla
+      - Fatehabad
+      - Malout
+      - Sankarankovil
+      - Tenkasi
+      - Ratnagiri
+      - Rabkavi Banhatti
+      - Sikandrabad
+      - Chaibasa
+      - Chirmiri
+      - Palwancha
+      - Bhawanipatna
+      - Kayamkulam
+      - Pithampur
+      - Nabha
+      - Shahabad, Hardoi
+      - Dhenkanal
+      - Uran Islampur
+      - Gopalganj
+      - Bongaigaon City
+      - Palani
+      - Pusad
+      - Sopore
+      - Pilkhuwa
+      - Tarn Taran
+      - Renukoot
+      - Mandamarri
+      - Shahabad
+      - Barbil
+      - Koratla
+      - Madhubani
+      - Arambagh
+      - Gohana
+      - Ladnu
+      - Pattukkottai
+      - Sirsi
+      - Sircilla
+      - Tamluk
+      - Jagraon
+      - AlipurdUrban Agglomerationr
+      - Alirajpur
+      - Tandur
+      - Naidupet
+      - Tirupathur
+      - Tohana
+      - Ratangarh
+      - Dhubri
+      - Masaurhi
+      - Visnagar
+      - Vrindavan
+      - Nokha
+      - Nagari
+      - Narwana
+      - Ramanathapuram
+      - Ujhani
+      - Samastipur
+      - Laharpur
+      - Sangamner
+      - Nimbahera
+      - Siddipet
+      - Suri
+      - Diphu
+      - Jhargram
+      - Shirpur-Warwade
+      - Tilhar
+      - Sindhnur
+      - Udumalaipettai
+      - Malkapur
+      - Wanaparthy
+      - Gudur
+      - Kendujhar
+      - Mandla
+      - Mandi
+      - Nedumangad
+      - North Lakhimpur
+      - Vinukonda
+      - Tiptur
+      - Gobichettipalayam
+      - Sunabeda
+      - Wani
+      - Upleta
+      - Narasapuram
+      - Nuzvid
+      - Tezpur
+      - Una
+      - Markapur
+      - Sheopur
+      - Thiruvarur
+      - Sidhpur
+      - Sahaswan
+      - Suratgarh
+      - Shajapur
+      - Rayagada
+      - Lonavla
+      - Ponnur
+      - Kagaznagar
+      - Gadwal
+      - Bhatapara
+      - Kandukur
+      - Sangareddy
+      - Unjha
+      - Lunglei
+      - Karimganj
+      - Kannur
+      - Bobbili
+      - Mokameh
+      - Talegaon Dabhade
+      - Anjangaon
+      - Mangrol
+      - Sunam
+      - Gangarampur
+      - Thiruvallur
+      - Tirur
+      - Rath
+      - Jatani
+      - Viramgam
+      - Rajsamand
+      - Yanam
+      - Kottayam
+      - Panruti
+      - Dhuri
+      - Namakkal
+      - Kasaragod
+      - Modasa
+      - Rayadurg
+      - Supaul
+      - Kunnamkulam
+      - Umred
+      - Bellampalle
+      - Sibsagar
+      - Mandi Dabwali
+      - Ottappalam
+      - Dumraon
+      - Samalkot
+      - Jaggaiahpet
+      - Goalpara
+      - Tuni
+      - Lachhmangarh
+      - Bhongir
+      - Amalapuram
+      - Firozpur Cantt.
+      - Vikarabad
+      - Thiruvalla
+      - Sherkot
+      - Palghar
+      - Shegaon
+      - Jangaon
+      - Bheemunipatnam
+      - Panna
+      - Thodupuzha
+      - KathUrban Agglomeration
+      - Palitana
+      - Arwal
+      - Venkatagiri
+      - Kalpi
+      - Rajgarh (Churu)
+      - Sattenapalle
+      - Arsikere
+      - Ozar
+      - Thirumangalam
+      - Petlad
+      - Nasirabad
+      - Phaltan
+      - Rampurhat
+      - Nanjangud
+      - Forbesganj
+      - Tundla
+      - BhabUrban Agglomeration
+      - Sagara
+      - Pithapuram
+      - Sira
+      - Bhadrachalam
+      - Charkhi Dadri
+      - Chatra
+      - Palasa Kasibugga
+      - Nohar
+      - Yevla
+      - Sirhind Fatehgarh Sahib
+      - Bhainsa
+      - Parvathipuram
+      - Shahade
+      - Chalakudy
+      - Narkatiaganj
+      - Kapadvanj
+      - Macherla
+      - Raghogarh-Vijaypur
+      - Rupnagar
+      - Naugachhia
+      - Sendhwa
+      - Byasanagar
+      - Sandila
+      - Gooty
+      - Salur
+      - Nanpara
+      - Sardhana
+      - Vita
+      - Gumia
+      - Puttur
+      - Jalandhar Cantt.
+      - Nehtaur
+      - Changanassery
+      - Mandapeta
+      - Dumka
+      - Seohara
+      - Umarkhed
+      - Madhupur
+      - Vikramasingapuram
+      - Punalur
+      - Kendrapara
+      - Sihor
+      - Nellikuppam
+      - Samana
+      - Warora
+      - Nilambur
+      - Rasipuram
+      - Ramnagar
+      - Jammalamadugu
+      - Nawanshahr
+      - Thoubal
+      - Athni
+      - Cherthala
+      - Sidhi
+      - Farooqnagar
+      - Peddapuram
+      - Chirkunda
+      - Pachora
+      - Madhepura
+      - Pithoragarh
+      - Tumsar
+      - Phalodi
+      - Tiruttani
+      - Rampura Phul
+      - Perinthalmanna
+      - Padrauna
+      - Pipariya
+      - Dalli-Rajhara
+      - Punganur
+      - Mattannur
+      - Mathura
+      - Thakurdwara
+      - Nandivaram-Guduvancheri
+      - Mulbagal
+      - Manjlegaon
+      - Wankaner
+      - Sillod
+      - Nidadavole
+      - Surapura
+      - Rajagangapur
+      - Sheikhpura
+      - Parlakhemundi
+      - Kalimpong
+      - Siruguppa
+      - Arvi
+      - Limbdi
+      - Barpeta
+      - Manglaur
+      - Repalle
+      - Mudhol
+      - Shujalpur
+      - Mandvi
+      - Thangadh
+      - Sironj
+      - Nandura
+      - Shoranur
+      - Nathdwara
+      - Periyakulam
+      - Sultanganj
+      - Medak
+      - Narayanpet
+      - Raxaul Bazar
+      - Rajauri
+      - Pernampattu
+      - Nainital
+      - Ramachandrapuram
+      - Vaijapur
+      - Nangal
+      - Sidlaghatta
+      - Punch
+      - Pandhurna
+      - Wadgaon Road
+      - Talcher
+      - Varkala
+      - Pilani
+      - Nowgong
+      - Naila Janjgir
+      - Mapusa
+      - Vellakoil
+      - Merta City
+      - Sivaganga
+      - Mandideep
+      - Sailu
+      - Vyara
+      - Kovvur
+      - Vadalur
+      - Nawabganj
+      - Padra
+      - Sainthia
+      - Siana
+      - Shahpur
+      - Sojat
+      - Noorpur
+      - Paravoor
+      - Murtijapur
+      - Ramnagar
+      - Sundargarh
+      - Taki
+      - Saundatti-Yellamma
+      - Pathanamthitta
+      - Wadi
+      - Rameshwaram
+      - Tasgaon
+      - Sikandra Rao
+      - Sihora
+      - Tiruvethipuram
+      - Tiruvuru
+      - Mehkar
+      - Peringathur
+      - Perambalur
+      - Manvi
+      - Zunheboto
+      - Mahnar Bazar
+      - Attingal
+      - Shahbad
+      - Puranpur
+      - Nelamangala
+      - Nakodar
+      - Lunawada
+      - Murshidabad
+      - Mahe
+      - Lanka
+      - Rudauli
+      - Tuensang
+      - Lakshmeshwar
+      - Zira
+      - Yawal
+      - Thana Bhawan
+      - Ramdurg
+      - Pulgaon
+      - Sadasivpet
+      - Nargund
+      - Neem-Ka-Thana
+      - Memari
+      - Nilanga
+      - Naharlagun
+      - Pakaur
+      - Wai
+      - Tarikere
+      - Malavalli
+      - Raisen
+      - Lahar
+      - Uravakonda
+      - Savanur
+      - Sirohi
+      - Udhampur
+      - Umarga
+      - Pratapgarh
+      - Lingsugur
+      - Usilampatti
+      - Palia Kalan
+      - Wokha
+      - Rajpipla
+      - Vijayapura
+      - Rawatbhata
+      - Sangaria
+      - Paithan
+      - Rahuri
+      - Patti
+      - Zaidpur
+      - Lalsot
+      - Maihar
+      - Vedaranyam
+      - Nawapur
+      - Solan
+      - Vapi
+      - Sanawad
+      - Warisaliganj
+      - Revelganj
+      - Sabalgarh
+      - Tuljapur
+      - Simdega
+      - Musabani
+      - Kodungallur
+      - Phulabani
+      - Umreth
+      - Narsipatnam
+      - Nautanwa
+      - Rajgir
+      - Yellandu
+      - Sathyamangalam
+      - Pilibanga
+      - Morshi
+      - Pehowa
+      - Sonepur
+      - Pappinisseri
+      - Zamania
+      - Mihijam
+      - Purna
+      - Puliyankudi
+      - Shikarpur, Bulandshahr
+      - Umaria
+      - Porsa
+      - Naugawan Sadat
+      - Fatehpur Sikri
+      - Manuguru
+      - Udaipur
+      - Pipar City
+      - Pattamundai
+      - Nanjikottai
+      - Taranagar
+      - Yerraguntla
+      - Satana
+      - Sherghati
+      - Sankeshwara
+      - Madikeri
+      - Thuraiyur
+      - Sanand
+      - Rajula
+      - Kyathampalle
+      - Shahabad, Rampur
+      - Tilda Newra
+      - Narsinghgarh
+      - Chittur-Thathamangalam
+      - Malaj Khand
+      - Sarangpur
+      - Robertsganj
+      - Sirkali
+      - Radhanpur
+      - Tiruchendur
+      - Utraula
+      - Patratu
+      - Vijainagar, Ajmer
+      - Periyasemur
+      - Pathri
+      - Sadabad
+      - Talikota
+      - Sinnar
+      - Mungeli
+      - Sedam
+      - Shikaripur
+      - Sumerpur
+      - Sattur
+      - Sugauli
+      - Lumding
+      - Vandavasi
+      - Titlagarh
+      - Uchgaon
+      - Mokokchung
+      - Paschim Punropara
+      - Sagwara
+      - Ramganj Mandi
+      - Tarakeswar
+      - Mahalingapura
+      - Dharmanagar
+      - Mahemdabad
+      - Manendragarh
+      - Uran
+      - Tharamangalam
+      - Tirukkoyilur
+      - Pen
+      - Makhdumpur
+      - Maner
+      - Oddanchatram
+      - Palladam
+      - Mundi
+      - Nabarangapur
+      - Mudalagi
+      - Samalkha
+      - Nepanagar
+      - Karjat
+      - Ranavav
+      - Pedana
+      - Pinjore
+      - Lakheri
+      - Pasan
+      - Puttur
+      - Vadakkuvalliyur
+      - Tirukalukundram
+      - Mahidpur
+      - Mussoorie
+      - Muvattupuzha
+      - Rasra
+      - Udaipurwati
+      - Manwath
+      - Adoor
+      - Uthamapalayam
+      - Partur
+      - Nahan
+      - Ladwa
+      - Mankachar
+      - Nongstoin
+      - Losal
+      - Sri Madhopur
+      - Ramngarh
+      - Mavelikkara
+      - Rawatsar
+      - Rajakhera
+      - Lar
+      - Lal Gopalganj Nindaura
+      - Muddebihal
+      - Sirsaganj
+      - Shahpura
+      - Surandai
+      - Sangole
+      - Pavagada
+      - Tharad
+      - Mansa
+      - Umbergaon
+      - Mavoor
+      - Nalbari
+      - Talaja
+      - Malur
+      - Mangrulpir
+      - Soro
+      - Shahpura
+      - Vadnagar
+      - Raisinghnagar
+      - Sindhagi
+      - Sanduru
+      - Sohna
+      - Manavadar
+      - Pihani
+      - Safidon
+      - Risod
+      - Rosera
+      - Sankari
+      - Malpura
+      - Sonamukhi
+      - Shamsabad, Agra
+      - Nokha
+      - PandUrban Agglomeration
+      - Mainaguri
+      - Afzalpur
+      - Shirur
+      - Salaya
+      - Shenkottai
+      - Pratapgarh
+      - Vadipatti
+      - Nagarkurnool
+      - Savner
+      - Sasvad
+      - Rudrapur
+      - Soron
+      - Sholingur
+      - Pandharkaoda
+      - Perumbavoor
+      - Maddur
+      - Nadbai
+      - Talode
+      - Shrigonda
+      - Madhugiri
+      - Tekkalakote
+      - Seoni-Malwa
+      - Shirdi
+      - SUrban Agglomerationr
+      - Terdal
+      - Raver
+      - Tirupathur
+      - Taraori
+      - Mukhed
+      - Manachanallur
+      - Rehli
+      - Sanchore
+      - Rajura
+      - Piro
+      - Mudabidri
+      - Vadgaon Kasba
+      - Nagar
+      - Vijapur
+      - Viswanatham
+      - Polur
+      - Panagudi
+      - Manawar
+      - Tehri
+      - Samdhan
+      - Pardi
+      - Rahatgarh
+      - Panagar
+      - Uthiramerur
+      - Tirora
+      - Rangia
+      - Sahjanwa
+      - Wara Seoni
+      - Magadi
+      - Rajgarh (Alwar)
+      - Rafiganj
+      - Tarana
+      - Rampur Maniharan
+      - Sheoganj
+      - Raikot
+      - Pauri
+      - Sumerpur
+      - Navalgund
+      - Shahganj
+      - Marhaura
+      - Tulsipur
+      - Sadri
+      - Thiruthuraipoondi
+      - Shiggaon
+      - Pallapatti
+      - Mahendragarh
+      - Sausar
+      - Ponneri
+      - Mahad
+      - Lohardaga
+      - Tirwaganj
+      - Margherita
+      - Sundarnagar
+      - Rajgarh
+      - Mangaldoi
+      - Renigunta
+      - Longowal
+      - Ratia
+      - Lalgudi
+      - Shrirangapattana
+      - Niwari
+      - Natham
+      - Unnamalaikadai
+      - PurqUrban Agglomerationzi
+      - Shamsabad, Farrukhabad
+      - Mirganj
+      - Todaraisingh
+      - Warhapur
+      - Rajam
+      - Urmar Tanda
+      - Lonar
+      - Powayan
+      - P.N.Patti
+      - Palampur
+      - Srisailam Project (Right Flank Colony) Township
+      - Sindagi
+      - Sandi
+      - Vaikom
+      - Malda
+      - Tharangambadi
+      - Sakaleshapura
+      - Lalganj
+      - Malkangiri
+      - Rapar
+      - Mauganj
+      - Todabhim
+      - Srinivaspur
+      - Murliganj
+      - Reengus
+      - Sawantwadi
+      - Tittakudi
+      - Lilong
+      - Rajaldesar
+      - Pathardi
+      - Achhnera
+      - Pacode
+      - Naraura
+      - Nakur
+      - Palai
+      - Morinda, India
+      - Manasa
+      - Nainpur
+      - Sahaspur
+      - Pauni
+      - Prithvipur
+      - Ramtek
+      - Silapathar
+      - Songadh
+      - Safipur
+      - Sohagpur
+      - Mul
+      - Sadulshahar
+      - Phillaur
+      - Sambhar
+      - Prantij
+      - Nagla
+      - Pattran
+      - Mount Abu
+      - Reoti
+      - Tenu dam-cum-Kathhara
+      - Panchla
+      - Sitarganj
+      - Pasighat
+      - Motipur
+      - O' Valley
+      - Raghunathpur
+      - Suriyampalayam
+      - Qadian
+      - Rairangpur
+      - Silvassa
+      - Nowrozabad (Khodargama)
+      - Mangrol
+      - Soyagaon
+      - Sujanpur
+      - Manihari
+      - Sikanderpur
+      - Mangalvedhe
+      - Phulera
+      - Ron
+      - Sholavandan
+      - Saidpur
+      - Shamgarh
+      - Thammampatti
+      - Maharajpur
+      - Multai
+      - Mukerian
+      - Sirsi
+      - Purwa
+      - Sheohar
+      - Namagiripettai
+      - Parasi
+      - Lathi
+      - Lalganj
+      - Narkhed
+      - Mathabhanga
+      - Shendurjana
+      - Peravurani
+      - Mariani
+      - Phulpur
+      - Rania
+      - Pali
+      - Pachore
+      - Parangipettai
+      - Pudupattinam
+      - Panniyannur
+      - Maharajganj
+      - Rau
+      - Monoharpur
+      - Mandawa
+      - Marigaon
+      - Pallikonda
+      - Pindwara
+      - Shishgarh
+      - Patur
+      - Mayang Imphal
+      - Mhowgaon
+      - Guruvayoor
+      - Mhaswad
+      - Sahawar
+      - Sivagiri
+      - Mundargi
+      - Punjaipugalur
+      - Kailasahar
+      - Samthar
+      - Sakti
+      - Sadalagi
+      - Silao
+      - Mandalgarh
+      - Loha
+      - Pukhrayan
+      - Padmanabhapuram
+      - Belonia
+      - Saiha
+      - Srirampore
+      - Talwara
+      - Puthuppally
+      - Khowai
+      - Vijaypur
+      - Takhatgarh
+      - Thirupuvanam
+      - Adra
+      - Piriyapatna
+      - Obra
+      - Adalaj
+      - Nandgaon
+      - Barh
+      - Chhapra
+      - Panamattom
+      - Niwai
+      - Bageshwar
+      - Tarbha
+      - Adyar
+      - Narsinghgarh
+      - Warud
+      - Asarganj
+      - Sarsod
+

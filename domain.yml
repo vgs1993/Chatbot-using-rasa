@@ -1,0 +1,148 @@
+version: "3.1"
+
+intents:
+  - greet
+  - affirm
+  - deny
+  - personal
+  - objective
+  - experience
+  - done
+  - education
+  - leadership
+  - skills
+  - communication
+
+entities:
+  - PERSON
+  - first_name
+  - last_name
+  - street
+  - city
+  - state
+  - pin_code
+  - phone_number
+  - email
+  - objective
+  - skill
+  - year
+  - job_title
+  - company
+  - degree
+  - school
+  - communication
+  - language
+
+slots:
+  active_dialog:
+    type: text
+    mappings:
+      - type: custom
+  active_slot:
+    type: text
+    mappings:
+      - type: custom
+  PERSON:
+    type: text
+    mappings:
+      - type: custom
+  first_name:
+    type: text
+    mappings:
+      - type: custom
+  last_name:
+    type: text
+    mappings:
+      - type: custom
+  street:
+    type: text
+    mappings:
+      - type: custom
+  city:
+    type: text
+    mappings:
+      - type: custom
+  state:
+    type: text
+    mappings:
+      - type: custom
+  pin_code:
+    type: text
+    mappings:
+      - type: custom
+  phone_number:
+    type: text
+    mappings:
+      - type: custom
+  email:
+    type: text
+    mappings:
+      - type: custom
+  objective:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+  skill:
+    type: text
+    mappings:
+      - type: custom
+  skill1:
+    type: text
+    mappings:
+      - type: custom
+  skill2:
+    type: text
+    mappings:
+      - type: custom
+  skill3:
+    type: text
+    mappings:
+      - type: custom
+  experience:
+    type: text
+    mappings:
+      - type: custom
+  experience_complete:
+    type: bool
+    mappings:
+      - type: custom
+  education:
+    type: text
+    mappings:
+      - type: custom
+  education_complete:
+    type: bool
+    mappings:
+      - type: custom
+  communication:
+    type: text
+    mappings:
+      - type: custom
+  leadership:
+    type: text
+    mappings:
+      - type: custom
+  leadership_complete:
+    type: bool
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hi there! I'm your resume assistant. Provide me the details of any of the sections below:\n
+    Personal details - Name, Address, Phone, Email\n
+    Objective of the resume\n
+    Skills and Abilities\n
+    Work history - Company, Duration, Job Title\n
+    Education - Degree, Duration, School\n
+    Communication languages \n
+    Leadership skills highlights\n"
+
+actions:
+  - utter_greet
+  - action_main_router
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

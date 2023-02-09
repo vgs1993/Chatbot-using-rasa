@@ -1,0 +1,5 @@
+FROM python:3.7-slim
+RUN python -m pip install rasa
+WORKDIR /app
+COPY . .
+CMD ["rasa", "run", "actions", "--port", "8080"]

@@ -1,0 +1,54 @@
+version: "3.1"
+
+rules:
+
+  - rule: Begin conversation
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Handle affirm
+    steps:
+      - intent: affirm
+      - action: action_main_router
+
+  - rule: Handle personal
+    steps:
+      - intent: personal
+      - action: action_main_router
+
+  - rule: Handle objective
+    steps:
+      - intent: objective
+      - action: action_main_router
+
+  - rule: Handle skills
+    steps:
+      - intent: skills
+      - action: action_main_router
+
+  - rule: Handle communication
+    steps:
+      - intent: communication
+      - action: action_main_router
+
+  - rule: Handle experience
+    steps:
+      - intent: experience
+      - action: action_main_router
+
+  - rule: Handle done
+    steps:
+      - intent: done
+      - action: action_main_router
+
+  - rule: Handle education
+    steps:
+      - intent: education
+      - action: action_main_router
+
+  - rule: Handle leadership
+    steps:
+      - intent: leadership
+      - action: action_main_router
+
